@@ -90,4 +90,31 @@ Congratulations to
 !
 
 
-### Query5- 
+### Query5- How many films do we have in store 1 and 2
+```
+-- Prompt: how many films do we have in store 1 and 2
+
+SELECT COUNT(film.film_id) as film_number, inventory.store_id as store 
+FROM film
+FULL JOIN inventory 
+ON film.film_id = inventory.film_id
+GROUP BY store;
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/1ff1d25c-8931-4ca9-a247-95377085e661)
+
+
+### Query6-What are the missing films?
+Let's look into the data and investigate why there are films that does not fall into either store 1 or store 2.
+```
+-- Prompt: What are the missing films?
+
+SELECT inventory.film_id, inventory.store_id as store, film.film_id
+FROM inventory 
+FULL JOIN film 
+ON inventory.film_id=film.film_id
+ORDER BY store_id DESC
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/d7886922-63ce-41b8-aa33-5c2755c8f5a2)
+
+Further checking the unknown film has a film_id in the table film, and yet the film_id in the table inventory and store_id are missing. 
+It could be the case that the film is not yet put into an inventory, but it would be a good idea to go to our store managers. 
