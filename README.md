@@ -57,7 +57,7 @@ Store 2 - 27690.62/273 =101.5408
 
 From here we can make a little assumption that a higher customer base usually generates a higher sales record.
 
-###Query4-Finding our top 10 customers 
+### Query4-Finding our top 10 customers 
 
 Apart from expanstion, we could also think of how to leverage the current customer base in order to increase our sales revenue. Why not launching a VIP program for the top 10 client? To do this, we would be using the LIMIT & ORDER BY Function in SQL. 
 
