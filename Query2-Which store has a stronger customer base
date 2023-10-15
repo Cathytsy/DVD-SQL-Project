@@ -1,4 +1,0 @@
--- Prompt: Which store has a stronger customer base?
-SELECT COUNT(store_id), store_id as store
-FROM customer
-GROUP BY store_id
