@@ -14,7 +14,7 @@ If I want to expand my business e.g opening another shop, what factors should I 
 SELECT staff.staff_id, staff.first_name, staff.last_name, store.store_id, store.manager_staff_id
 FROM staff
 FULL JOIN store
-ON staff.staff_id = store.store_id
+ON staff.staff_id = store.store_id;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/146478fe-7d29-4e1a-96a9-1852f202f711)
 
@@ -30,7 +30,7 @@ Instead of opening another store, increasing the current scale of store might al
 -- Prompt: Which store has a stronger customer base?
 SELECT COUNT(store_id) as customer_total, store_id as store
 FROM customer
-GROUP BY store_id
+GROUP BY store_id;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/1f6186db-ec83-4ccc-88a5-dc79766d7975)
 
@@ -46,7 +46,7 @@ SELECT SUM(payment.amount) as sales_total, customer.store_id as store
 FROM payment 
 FULL JOIN customer
 ON customer.customer_id = payment.customer_id
-GROUP BY customer.store_id
+GROUP BY customer.store_id;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/5f41017d-9cbf-4a6d-8769-909328111fb3)
 
