@@ -1,0 +1,6 @@
+-- Prompt: Which store has a better sales record? 
+SELECT SUM(payment.amount) as sales_total, customer.store_id as store
+FROM payment 
+FULL JOIN customer
+ON customer.customer_id = payment.customer_id
+GROUP BY customer.store_id;
