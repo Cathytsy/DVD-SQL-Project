@@ -3,7 +3,7 @@
 ## Objective
 🤔 Running a DVD Rental business is never easy, especially when it comes to some business solutions.
 
-### Query1: Understanding my scale of business - Find all branches and the name of the staff 
+### Query1-Understanding my scale of business - Find all branches and the name of the staff 
 
 If I want to expand my business e.g opening another shop, what factors should I put into an account?
 - How many employees should I recruit?
@@ -53,13 +53,14 @@ GROUP BY customer.store_id;
 Now from the result generated we know the store 1 performs better, and if we do a little caculation, the customer in store 1 has a higher consumption than the customer in store 2. 
 
 Store 1 - 33621.42/326 = 103.1332
+
 Store 2 - 27690.62/273 =101.5408
 
 From here we can make a little assumption that a higher customer base usually generates a higher sales record.
 
 ### Query4-Finding our top 10 customers 
 
-Apart from expanstion, we could also think of how to leverage the current customer base in order to increase our sales revenue. Why not launching a VIP program for the top 10 client? To do this, we would be using the LIMIT & ORDER BY Function in SQL. 
+Apart from expanstion, we could also think of how to leverage the current customer base in order to increase our sales revenue. Why not launch a VIP program for the top 10 client? To do this, we would be using the LIMIT & ORDER BY Function in SQL. 
 
 ```
 -- Prompt: Who is our top 10 clients?
@@ -75,4 +76,18 @@ LIMIT 10;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/7efee866-0063-4ea3-8235-54954e398c90)
 
+Congratulations to 
+"Eleanor"
+"Karl"
+"Marion"
+"Rhonda"
+"Clara"
+"Tommy"
+"Ana"
+"Curtis"
+"Marcia"
+"Mike"
+!
 
+
+### Query5- 
