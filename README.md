@@ -13,7 +13,7 @@ If I want to expand my business e.g opening another shop, what factors should I 
 -- Prompt: Find all branches and the name of the staff  
 SELECT staff.staff_id, staff.first_name, staff.last_name, store.store_id, store.manager_staff_id
 FROM staff
-JOIN store
+FULL JOIN store
 ON staff.staff_id = store.store_id
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/146478fe-7d29-4e1a-96a9-1852f202f711)
