@@ -103,6 +103,9 @@ GROUP BY store;
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/1ff1d25c-8931-4ca9-a247-95377085e661)
 
 
+Some intersting finding here, although store 2 has more film numbers than store 1, store 1 has a better revenue. 
+It might be a good idea to get Mike and Jon in a meeting and for Mike to share his business strategy.
+
 ### Query6-What are the missing films?
 Let's look into the data and investigate why there are films that does not fall into either store 1 or store 2.
 ```
@@ -117,4 +120,4 @@ ORDER BY store_id DESC
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/d7886922-63ce-41b8-aa33-5c2755c8f5a2)
 
 Further checking the unknown film has a film_id in the table film, and yet the film_id in the table inventory and store_id are missing. 
-It could be the case that the film is not yet put into an inventory, but it would be a good idea to go to our store managers. 
+It could be the case that the film is not yet put into an inventory, but it would be a good idea to go to our store managers Mike and Jon. 
