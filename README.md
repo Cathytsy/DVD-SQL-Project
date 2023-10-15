@@ -1,5 +1,7 @@
 # DVD-SQL-Project
-🤔 
+
+## Objective
+🤔 Running a DVD Rental business is never easy, especially when it comes to some business solutions.
 
 ### 1st Query: Understanding my scale of business - Find all branches and the name of the staff 
 ```-- Prompt: Find all branches and the name of the staff  
