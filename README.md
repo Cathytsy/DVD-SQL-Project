@@ -28,7 +28,7 @@ Instead of opening another store, increasing the current scale of store might al
   
 ```
 -- Prompt: Which store has a stronger customer base?
-SELECT COUNT(store_id) as customer_total, store_id as store
+SELECT COUNT(customer_id) as customer_total, store_id as store
 FROM customer
 GROUP BY store_id;
 ```
