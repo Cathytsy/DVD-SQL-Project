@@ -36,3 +36,29 @@ GROUP BY store_id
 
 Results show that store one has a larger customer base when compared with store 2, and hence increasing the resources for store 1 might as well be a better approach. 
 
+### Query3-Which store has a better sales record? 
+
+Now we know store 1 has a stronger customer base, but we have to be careful that a stronger customer base does not necessarily mean the store has a better sales record, depending on how much each customer shops. To further check if store 1 performs better, let's make use of SQL's SUM and Group BY function.
+
+```
+-- Prompt: Which store has a better sales record? 
+SELECT SUM(payment.amount) as sales_total, customer.store_id as store
+FROM payment 
+FULL JOIN customer
+ON customer.customer_id = payment.customer_id
+GROUP BY customer.store_id
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/5f41017d-9cbf-4a6d-8769-909328111fb3)
+
+Now from the result generated we know the store 1 performs better, and if we do a little caculation, the customer in store 1 has a higher consumption than the customer in store 2. 
+
+Store 1 - 33621.42/326 = 103.1332
+Store 2 - 27690.62/273 =101.5408
+
+From here we can make a little assumption that a higher customer base usually generates a higher sales record.
+
+###Query4-Finding our top 10 customers 
+
+Apart from expanstion, we could also think of how to leverage the current customer base in order to increase our sales revenue. Why not launching a VIP program for the top 10 client? To do this, we would be using the LIMIT & ORDER BY Function in SQL. 
+
+
