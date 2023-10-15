@@ -63,17 +63,16 @@ Apart from expanstion, we could also think of how to leverage the current custom
 
 ```
 -- Prompt: Who is our top 10 clients?
-SELECT customer.customer_id, customer.first_name, customer.last_name, payment.amount
-FROM customer 
-FULL JOIN payment
+
+SELECT customer.customer_id, customer.first_name, customer.last_name,SUM(payment.amount) as total_consumption
+FROM payment 
+FULL JOIN customer
 ON customer.customer_id = payment.customer_id
-ORDER BY payment.amount DESC
+GROUP BY customer.customer_id
+ORDER BY total_consumption DESC
 LIMIT 10;
+
 ```
-
-
-
-
-![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/57641b84-8026-4d6f-b4d0-c005649d3937)
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/7efee866-0063-4ea3-8235-54954e398c90)
 
 
