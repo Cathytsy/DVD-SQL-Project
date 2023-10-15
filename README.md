@@ -121,3 +121,25 @@ ORDER BY store_id DESC
 
 Further checking the unknown film has a film_id in the table film, and yet the film_id in the table inventory and store_id are missing. 
 It could be the case that the film is not yet put into an inventory, but it would be a good idea to go to our store managers Mike and Jon. 
+
+### Query7-Which category of film do we have the most
+
+Let's look at the how many DVDs we have in each category. Previously in Query 6 we have realized that there are 42 items that only have film_id, is under investigation. 
+Therefore, when considering the DVDs, we counted the film_id in table inventory, instead of film_id in table film.
+
+```
+-- Prompt: Which category of film do we have the most?
+SELECT COUNT(inventory.film_id), category.name
+from category 
+FULL JOIN film_category
+ON category.category_id = film_category.category_id 
+FULL JOIN film
+ON film_category.film_id = film.film_id
+FULL JOIN inventory
+ON film.film_id = inventory.film_id
+GROUP BY category.name
+ORDER BY count ASC
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/43d9e16a-6317-494d-b733-c6b71ba27e2d)
+
+Having ascended the order we can see Music, Travel and Horror are the least category we have.
