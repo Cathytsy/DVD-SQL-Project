@@ -60,6 +60,18 @@ From here we can make a little assumption that a higher customer base usually ge
 ### Query4-Finding our top 10 customers 
 
 Apart from expanstion, we could also think of how to leverage the current customer base in order to increase our sales revenue. Why not launching a VIP program for the top 10 client? To do this, we would be using the LIMIT & ORDER BY Function in SQL. 
+```
+-- Prompt: Who is our top 10 clients?
+SELECT customer.customer_id, customer.first_name, customer.last_name, payment.amount
+FROM customer 
+FULL JOIN payment
+ON customer.customer_id = payment.customer_id
+ORDER BY payment.amount DESC
+LIMIT 10;
+```
+
+
+
 
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/57641b84-8026-4d6f-b4d0-c005649d3937)
 
