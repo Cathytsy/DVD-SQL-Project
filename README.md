@@ -5,7 +5,9 @@
 In this project we will be using PostgreSQL and the database from 
 https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/?callback=in&code=MWI5MWFLM2YTYZI0NY0ZN2JHLTKZMZMTYTBJMMI4MGRLYTNI&state=41730ecc65fc4f519c0fb9d8927161e5
 
-##Huge credit to PostgreSQL Tutorial for sharing the database!
+### Huge credit to PostgreSQL Tutorial for sharing the database!
+
+## DVD Rental database
 
 The DVD rental database represents the business processes of a DVD rental store. The DVD rental database has many objects, including:
 
@@ -129,13 +131,14 @@ Let's look into the data and investigate why there are films that does not fall 
 ```
 -- Prompt: What are the missing films?
 
-SELECT inventory.film_id, inventory.store_id as store, film.film_id
+SELECT inventory.film_id as inventory_film_id, inventory.store_id as store, film.film_id as film_id
 FROM inventory 
 FULL JOIN film 
 ON inventory.film_id=film.film_id
 ORDER BY store_id DESC;
+
 ```
-![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/d7886922-63ce-41b8-aa33-5c2755c8f5a2)
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/44855f78-fb5e-42f4-853c-b07680e98af5)
 
 Further checking the unknown film has a film_id in the table film, and yet the film_id in the table inventory and store_id are missing. 
 It could be the case that the film is not yet put into an inventory, but it would be a good idea to go to our store managers Mike and Jon. 
