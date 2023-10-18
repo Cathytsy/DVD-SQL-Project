@@ -138,8 +138,23 @@ ON film_category.film_id = film.film_id
 FULL JOIN inventory
 ON film.film_id = inventory.film_id
 GROUP BY category.name
-ORDER BY count ASC
-```
-![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/43d9e16a-6317-494d-b733-c6b71ba27e2d)
+ORDER BY count DESC
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/a0e9b197-d557-439b-9bd1-f4a4437df4c0)
 
-Having ascended the order we can see Music, Travel and Horror are the least category we have.
+
+###Query8-Which category of film do we rent the most
+
+```
+-- Prompt: Which category of film do we rent the most?
+SELECT COUNT(film.rental_rate), category.name
+from category 
+FULL JOIN film_category
+ON category.category_id = film_category.category_id 
+FULL JOIN film
+ON film_category.film_id = film.film_id
+FULL JOIN inventory
+ON film.film_id = inventory.film_id
+GROUP BY category.name
+oRDER BY COUNT DESC
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/acc563e7-9a0f-4ba8-bd4f-e22d05f539d0)
