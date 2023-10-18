@@ -1,7 +1,25 @@
 # DVD Rental Project
 
 ## Objective
-🤔 Running a DVD Rental business is never easy, especially when it comes to some business solutions.
+🤔 Running a DVD Rental business is never easy, especially when it comes to business solutions.
+In this project we will be using PostgreSQL and the database from 
+https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/?callback=in&code=MWI5MWFLM2YTYZI0NY0ZN2JHLTKZMZMTYTBJMMI4MGRLYTNI&state=41730ecc65fc4f519c0fb9d8927161e5
+
+##Huge credit to PostgreSQL Tutorial for sharing the database!
+
+The DVD rental database represents the business processes of a DVD rental store. The DVD rental database has many objects, including:
+
+15 tables
+1 trigger
+7 views
+8 functions
+1 domain
+13 sequences
+
+### DVD Rental ER Model
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/4a85c753-4735-4420-9951-57e6cbeb3bf0)
+
+## Sales Booster
 
 ### Query1-Understanding my scale of business - Find all branches and the name of the staff 
 
@@ -164,9 +182,11 @@ ORDER BY COUNT DESC;
 
 Looking at the result of both query 7&8, it seems that we are on the right track in matching customer's preferences.
 
+## Operation enhancement - setting up standard and a search engine
+
 ### Query9-setting a replacement cost standard
 
-it is also important to let the customer and employee be aware of the replacement cost by setting a standard so that they are more careful when realizing the replacement cost is on high standard.
+It is also important to let the customer and employee be aware of the replacement cost by setting a standard so that they are more careful when realizing the replacement cost is on high standard.
 CASE WHEN has been applied here in matching the cost with a certain standard.
 
 ```
@@ -187,5 +207,15 @@ ORDER BY title;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/44a4df91-ddba-43a0-b320-33fdb1078beb)
 
-### Query10-
+### Query10-Finding movies with my SQL keyword
+Last, creating a keyword search engine for employee would help our store managers to do a quick search for the customer when looking up movies with certain keyword. Here we used keyword 'SQL' as an example.
+
+```
+-- Prompt: Finding movies with my SQL keyword
+SELECT *
+FROM Film
+WHERE description Like '%SQL%'
+```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/b0657497-2fb5-434a-8658-b0eb2b63e34c)
+
 
