@@ -115,7 +115,7 @@ SELECT inventory.film_id, inventory.store_id as store, film.film_id
 FROM inventory 
 FULL JOIN film 
 ON inventory.film_id=film.film_id
-ORDER BY store_id DESC
+ORDER BY store_id DESC;
 ```
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/d7886922-63ce-41b8-aa33-5c2755c8f5a2)
 
@@ -138,7 +138,7 @@ ON film_category.film_id = film.film_id
 FULL JOIN inventory
 ON film.film_id = inventory.film_id
 GROUP BY category.name
-ORDER BY count DESC
+ORDER BY count DESC;
 ```
 
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/a0e9b197-d557-439b-9bd1-f4a4437df4c0)
@@ -157,7 +157,30 @@ ON film_category.film_id = film.film_id
 FULL JOIN inventory
 ON film.film_id = inventory.film_id
 GROUP BY category.name
-oRDER BY COUNT DESC
+ORDER BY COUNT DESC;
 ```
 
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/acc563e7-9a0f-4ba8-bd4f-e22d05f539d0)
+
+### Query9-setting a replacement cost standard
+
+it is also important to let the customer and employee be aware of the replacement cost by setting a standard so that they are more careful when realizing the replacement cost is on high standard.
+CASE WHEN has been applied here in matching the cost with a certain standard.
+
+```
+--Prompt: setting a replacement cost standard
+SELECT title,
+       replacement_cost,
+       CASE
+	       WHEN replacement_cost>= 9.99 
+		   		AND replacement_cost<=15.99 THEN 'Low'
+           WHEN replacement_cost>=16.99
+                AND replacement_cost <= 23.99 THEN 'Medium'
+		   WHEN replacement_cost>23.99
+                THEN 'High'
+           
+       END replacement_cost_standard  
+FROM film
+ORDER BY title;
+```
+
