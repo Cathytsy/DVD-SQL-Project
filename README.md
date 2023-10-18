@@ -139,10 +139,12 @@ FULL JOIN inventory
 ON film.film_id = inventory.film_id
 GROUP BY category.name
 ORDER BY count DESC
+```
+
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/a0e9b197-d557-439b-9bd1-f4a4437df4c0)
 
 
-###Query8-Which category of film do we rent the most
+### Query8-Which category of film do we rent the most
 
 ```
 -- Prompt: Which category of film do we rent the most?
@@ -157,4 +159,5 @@ ON film.film_id = inventory.film_id
 GROUP BY category.name
 oRDER BY COUNT DESC
 ```
+
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/acc563e7-9a0f-4ba8-bd4f-e22d05f539d0)
