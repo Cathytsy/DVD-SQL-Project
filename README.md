@@ -162,6 +162,8 @@ ORDER BY COUNT DESC;
 
 ![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/acc563e7-9a0f-4ba8-bd4f-e22d05f539d0)
 
+Looking at the result of both query 7&8, it seems that we are on the right track in matching customer's preferences.
+
 ### Query9-setting a replacement cost standard
 
 it is also important to let the customer and employee be aware of the replacement cost by setting a standard so that they are more careful when realizing the replacement cost is on high standard.
@@ -183,4 +185,7 @@ SELECT title,
 FROM film
 ORDER BY title;
 ```
+![image](https://github.com/Cathytsy/DVD-SQL-Project/assets/147212218/44a4df91-ddba-43a0-b320-33fdb1078beb)
+
+### Query10-
 
